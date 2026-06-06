@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Comparatives & Superlatives — Speaking Focus</title>
+<style>
+  /* ── RESET & BASE ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #4F46E5;
+    --primary-light: #EEF2FF;
+    --accent: #F59E0B;
+    --accent-light: #FFFBEB;
+    --green: #059669;
+    --green-light: #D1FAE5;
+    --red: #DC2626;
+    --red-light: #FEE2E2;
+    --purple: #7C3AED;
+    --purple-light: #EDE9FE;
+    --gray-50: #F9FAFB;
+    --gray-100: #F3F4F6;
+    --gray-200: #E5E7EB;
+    --gray-400: #9CA3AF;
+    --gray-600: #4B5563;
+    --gray-800: #1F2937;
+    --radius: 12px;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--gray-50);
+    color: var(--gray-800);
+    line-height: 1.65;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+    color: white;
+    padding: 2.5rem 1.5rem 2rem;
+    text-align: center;
+  }
+  header .badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    border-radius: 999px;
+    padding: 0.25rem 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  header h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 800; margin-bottom: 0.4rem; }
+  header p { font-size: 1.05rem; opacity: 0.85; }
+
+  /* ── NAVIGATION TABS ── */
+  .tab-bar {
+    display: flex;
+    overflow-x: auto;
+    background: white;
+    border-bottom: 2px solid var(--gray-200);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    scrollbar-width: none;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 1rem 1.4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { color: var(--primary); background: var(--primary-light); }
+  .tab-btn.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+    background: var(--primary-light);
+  }
+  .tab-icon { margin-right: 0.35rem; }
+
+  /* ── MAIN LAYOUT ── */
+  main { max-width: 900px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ── CARDS ── */
+  .card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--gray-200);
+  }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+  }
+  .card-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .icon-purple { background: var(--purple-light); }
+  .icon-amber  { background: var(--accent-light); }
+  .icon-green  { background: var(--green-light); }
+  .icon-blue   { background: var(--primary-light); }
+
+  .card h2 { font-size: 1.15rem; font-weight: 700; }
+  .card h3 { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+
+  /* ── GRAMMAR REFERENCE TABLE ── */
+  .grammar-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.75rem;
+  }
+  .grammar-cell {
+    background: var(--primary-light);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    text-align: center;
+  }
+  .grammar-cell .label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary); font-weight: 700; margin-bottom: 0.4rem; }
+  .grammar-cell .word { font-size: 1.05rem; font-weight: 700; color: var(--gray-800); }
+
+  .irreg-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; font-size: 0.92rem; }
+  .irreg-table th { background: var(--primary); color: white; padding: 0.5rem 0.75rem; text-align: left; }
+  .irreg-table td { padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--gray-200); }
+  .irreg-table tr:last-child td { border: none; }
+  .irreg-table tr:nth-child(even) td { background: var(--gray-50); }
+
+  /* ── PHRASE CHIPS ── */
+  .phrases-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+  }
+  .chip {
+    background: var(--purple-light);
+    color: var(--purple);
+    border-radius: 999px;
+    padding: 0.3rem 0.85rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+  .chip.amber { background: var(--accent-light); color: #92400E; }
+  .chip.green { background: var(--green-light); color: var(--green); }
+
+  /* ── VOCAB SECTION ── */
+  .vocab-group { margin-bottom: 1.2rem; }
+  .vocab-topic {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--gray-400);
+    margin-bottom: 0.5rem;
+  }
+  .vocab-items { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .vocab-item {
+    background: var(--gray-100);
+    border-radius: 8px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+    border: 1.5px solid transparent;
+    user-select: none;
+  }
+  .vocab-item:hover { background: var(--primary-light); border-color: var(--primary); color: var(--primary); }
+  .vocab-item.selected { background: var(--primary); color: white; border-color: var(--primary); }
+  .vocab-item.used { background: var(--green-light); color: var(--green); border-color: var(--green); }
+
+  /* ── SPEAKING TASK CARDS ── */
+  .task-intro {
+    background: var(--accent-light);
+    border: 1.5px solid #FDE68A;
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  .task-intro strong { color: #92400E; }
+
+  /* ── DISCUSSION PROMPTS ── */
+  .prompt-stack { display: flex; flex-direction: column; gap: 0.75rem; }
+  .prompt-card {
+    background: var(--gray-50);
+    border: 1.5px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+    position: relative;
+    transition: all 0.2s;
+  }
+  .prompt-card:hover { border-color: var(--primary); background: var(--primary-light); }
+  .prompt-card .prompt-num {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    border-radius: 999px;
+    width: 24px; height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+  }
+  .prompt-card p { font-size: 0.95rem; display: flex; align-items: baseline; gap: 0.1rem; }
+  .prompt-card .hint { font-size: 0.8rem; color: var(--gray-400); margin-top: 0.35rem; font-style: italic; }
+  .prompt-card.done { border-color: var(--green); background: var(--green-light); }
+  .prompt-card.done .prompt-num { background: var(--green); }
+  .done-btn {
+    position: absolute;
+    top: 0.75rem; right: 0.75rem;
+    background: none;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 6px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--gray-400);
+    transition: all 0.2s;
+  }
+  .done-btn:hover { background: var(--green); color: white; border-color: var(--green); }
+  .prompt-card.done .done-btn { background: var(--green); color: white; border-color: var(--green); }
+
+  /* ── RANKING TASK ── */
+  .rank-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0.75rem 0 1rem;
+  }
+  .rank-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--gray-50);
+    border: 1.5px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 0.65rem 1rem;
+    cursor: grab;
+    transition: all 0.2s;
+    user-select: none;
+  }
+  .rank-item:active { cursor: grabbing; }
+  .rank-item .rank-num {
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    background: var(--gray-200);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--gray-600);
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+  .rank-item .rank-num.gold { background: #FDE68A; color: #92400E; }
+  .rank-item .rank-num.silver { background: #E5E7EB; color: #374151; }
+  .rank-item .rank-num.bronze { background: #FCD9BD; color: #7C2D12; }
+  .rank-item .rank-label { font-weight: 600; font-size: 0.95rem; flex: 1; }
+  .rank-item .rank-desc { font-size: 0.8rem; color: var(--gray-400); }
+  .drag-icon { color: var(--gray-400); font-size: 1.1rem; }
+  .rank-sentence-prompt {
+    background: var(--primary-light);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    font-size: 0.88rem;
+    color: var(--primary);
+  }
+  .rank-sentence-prompt strong { font-weight: 700; }
+
+  .shuffle-btn, .reveal-btn, .flip-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.55rem 1.2rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 0.75rem;
+  }
+  .shuffle-btn:hover, .flip-btn:hover { background: #3730A3; }
+  .reveal-btn { background: var(--green); }
+  .reveal-btn:hover { background: #047857; }
+
+  /* ── ROLE PLAY ── */
+  .roleplay-scenarios { display: flex; flex-direction: column; gap: 1rem; }
+  .scenario-card {
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .scenario-card:hover { border-color: var(--primary); }
+  .scenario-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    background: var(--gray-50);
+    cursor: pointer;
+  }
+  .scenario-header h4 { font-size: 0.98rem; font-weight: 700; }
+  .scenario-tag {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+  }
+  .tag-purple { background: var(--purple-light); color: var(--purple); }
+  .tag-amber  { background: var(--accent-light); color: #92400E; }
+  .tag-green  { background: var(--green-light); color: var(--green); }
+  .scenario-body {
+    display: none;
+    padding: 1.25rem;
+  }
+  .scenario-body.open { display: block; }
+  .scenario-body .roles { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+  .role-box {
+    border-radius: 8px;
+    padding: 0.85rem;
+    font-size: 0.88rem;
+  }
+  .role-a { background: var(--purple-light); }
+  .role-b { background: var(--accent-light); }
+  .role-box .role-title { font-weight: 700; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+  .role-box ul { padding-left: 1.1rem; }
+  .role-box ul li { margin-bottom: 0.25rem; }
+  .useful-lang { margin-top: 0.75rem; }
+  .useful-lang .ul-title { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--gray-400); margin-bottom: 0.4rem; }
+  .useful-lang .phrases { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .useful-lang .phrase { background: var(--gray-100); border-radius: 999px; padding: 0.2rem 0.7rem; font-size: 0.82rem; font-style: italic; }
+  .chevron { transition: transform 0.25s; font-size: 0.9rem; }
+  .chevron.open { transform: rotate(180deg); }
+
+  /* ── EXERCISE SECTION ── */
+  .exercise-block { margin-bottom: 1.75rem; }
+  .exercise-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .exercise-title::after { content: ''; flex: 1; height: 1px; background: var(--gray-200); }
+
+  /* Gap fill */
+  .gapfill { font-size: 0.95rem; line-height: 2.1; }
+  .gapfill input {
+    width: 130px;
+    border: none;
+    border-bottom: 2px solid var(--primary);
+    background: transparent;
+    font-size: 0.92rem;
+    font-family: inherit;
+    color: var(--gray-800);
+    padding: 0 0.2rem;
+    outline: none;
+    text-align: center;
+  }
+  .gapfill input.correct { border-color: var(--green); color: var(--green); }
+  .gapfill input.wrong { border-color: var(--red); color: var(--red); }
+  .gapfill .q { display: block; margin-bottom: 0.6rem; }
+
+  /* MCQ */
+  .mcq-item { margin-bottom: 1rem; }
+  .mcq-item .mcq-q { font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .mcq-options { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .mcq-btn {
+    background: var(--gray-100);
+    border: 1.5px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 0.4rem 1rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .mcq-btn:hover { background: var(--primary-light); border-color: var(--primary); color: var(--primary); }
+  .mcq-btn.correct { background: var(--green-light); border-color: var(--green); color: var(--green); }
+  .mcq-btn.wrong   { background: var(--red-light);   border-color: var(--red);   color: var(--red); }
+  .mcq-btn:disabled { cursor: not-allowed; opacity: 0.85; }
+
+  /* Transform */
+  .transform-item { margin-bottom: 1.1rem; }
+  .transform-item .prompt-q { font-size: 0.9rem; color: var(--gray-600); margin-bottom: 0.4rem; }
+  .transform-item .prompt-q strong { color: var(--gray-800); font-weight: 600; }
+  .transform-item textarea {
+    width: 100%;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.9rem;
+    font-family: inherit;
+    resize: none;
+    height: 52px;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .transform-item textarea:focus { border-color: var(--primary); }
+  .model-answer {
+    display: none;
+    background: var(--green-light);
+    border-radius: 6px;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+    color: var(--green);
+    margin-top: 0.35rem;
+  }
+  .model-answer.show { display: block; }
+
+  /* Progress */
+  .progress-bar-wrap { background: var(--gray-200); border-radius: 999px; height: 6px; margin-bottom: 1.5rem; }
+  .progress-bar-fill { background: var(--primary); border-radius: 999px; height: 6px; transition: width 0.4s; }
+
+  /* ── SCORE ── */
+  .score-display {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--primary-light);
+    border-radius: var(--radius);
+    margin-top: 1rem;
+  }
+  .score-display .score-num { font-size: 2.5rem; font-weight: 800; color: var(--primary); }
+  .score-display .score-label { font-size: 0.9rem; color: var(--gray-600); margin-top: 0.2rem; }
+
+  /* ── SPEAKING STEMS ── */
+  .stems-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+  .stem-card {
+    background: var(--gray-50);
+    border: 1.5px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--gray-600);
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .stem-card:hover { background: var(--primary-light); border-color: var(--primary); color: var(--primary); font-style: normal; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .grammar-grid { grid-template-columns: 1fr 1fr; }
+    .scenario-body .roles { grid-template-columns: 1fr; }
+    .stems-grid { grid-template-columns: 1fr; }
+    .tab-btn { padding: 0.85rem 1rem; font-size: 0.82rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="badge">A2 · Adults · Speaking Focus</div>
+  <h1>📊 Comparatives &amp; Superlatives</h1>
+  <p>Compare, discuss, and persuade — in English.</p>
+</header>
+
+<!-- ═══ TAB BAR ═══ -->
+<nav class="tab-bar" id="tabBar">
+  <button class="tab-btn active" data-tab="reference"><span class="tab-icon">📋</span>Quick Reference</button>
+  <button class="tab-btn" data-tab="vocab"><span class="tab-icon">💬</span>Vocabulary</button>
+  <button class="tab-btn" data-tab="ranking"><span class="tab-icon">🏆</span>Ranking Task</button>
+  <button class="tab-btn" data-tab="discussion"><span class="tab-icon">🗣️</span>Discussion</button>
+  <button class="tab-btn" data-tab="roleplay"><span class="tab-icon">🎭</span>Role Play</button>
+  <button class="tab-btn" data-tab="exercises"><span class="tab-icon">✏️</span>Exercises</button>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════════════════════
+     TAB 1 — QUICK REFERENCE
+═══════════════════════════════════════ -->
+<div class="tab-panel active" id="tab-reference">
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-purple">📐</div>
+      <h2>How it works — in 30 seconds</h2>
+    </div>
+    <div class="grammar-grid">
+      <div class="grammar-cell">
+        <div class="label">Base adjective</div>
+        <div class="word">fast</div>
+      </div>
+      <div class="grammar-cell">
+        <div class="label">Comparative (+er / more)</div>
+        <div class="word">faster · more comfortable</div>
+      </div>
+      <div class="grammar-cell">
+        <div class="label">Superlative (the +est / most)</div>
+        <div class="word">the fastest · the most comfortable</div>
+      </div>
+    </div>
+    <div style="margin-top:1rem; font-size:0.88rem; color:var(--gray-600);">
+      <strong>Short adjectives</strong> (1 syllable) → add <strong>-er / -est</strong><br>
+      <strong>Long adjectives</strong> (3+ syllables) → use <strong>more / the most</strong><br>
+      <strong>2-syllable adjectives ending -y</strong> → change to <strong>-ier / the -iest</strong> (e.g. busy → busier)
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-amber">⚠️</div>
+      <h2>Irregular Adjectives</h2>
+    </div>
+    <table class="irreg-table">
+      <thead><tr><th>Base</th><th>Comparative</th><th>Superlative</th></tr></thead>
+      <tbody>
+        <tr><td>good</td><td>better</td><td>the best</td></tr>
+        <tr><td>bad</td><td>worse</td><td>the worst</td></tr>
+        <tr><td>far</td><td>further</td><td>the furthest</td></tr>
+        <tr><td>much / many</td><td>more</td><td>the most</td></tr>
+        <tr><td>little</td><td>less</td><td>the least</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-green">🗣️</div>
+      <h2>Useful Speaking Phrases</h2>
+    </div>
+    <h3 style="margin-bottom:0.4rem;">Comparatives</h3>
+    <div class="phrases-grid">
+      <span class="chip">a lot more…</span>
+      <span class="chip">much more…</span>
+      <span class="chip">slightly more…</span>
+      <span class="chip">a bit cheaper</span>
+      <span class="chip">far better</span>
+      <span class="chip">not as…as</span>
+      <span class="chip">just as…as</span>
+      <span class="chip">twice as…as</span>
+    </div>
+    <h3 style="margin-top:1rem; margin-bottom:0.4rem;">Superlatives</h3>
+    <div class="phrases-grid">
+      <span class="chip amber">by far the best</span>
+      <span class="chip amber">easily the worst</span>
+      <span class="chip amber">one of the most…</span>
+      <span class="chip amber">the least expensive</span>
+      <span class="chip amber">the most popular by far</span>
+    </div>
+    <h3 style="margin-top:1rem; margin-bottom:0.4rem;">Agreeing &amp; Disagreeing</h3>
+    <div class="phrases-grid">
+      <span class="chip green">I agree — it's definitely…</span>
+      <span class="chip green">I'm not sure about that…</span>
+      <span class="chip green">Actually, I think… is better because…</span>
+      <span class="chip green">That depends on…</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-blue">💡</div>
+      <h2>Sentence Starters</h2>
+    </div>
+    <div class="stems-grid">
+      <div class="stem-card">In my opinion, … is much better than …</div>
+      <div class="stem-card">I think … is the most … because …</div>
+      <div class="stem-card">… is not as … as … for me.</div>
+      <div class="stem-card">Personally, the worst thing about … is …</div>
+      <div class="stem-card">One of the most important things is …</div>
+      <div class="stem-card">Compared to …, … is far more …</div>
+      <div class="stem-card">… is definitely the least …, but …</div>
+      <div class="stem-card">I'd say … is just as … as …</div>
+    </div>
+    <p style="font-size:0.8rem; color:var(--gray-400); margin-top:0.75rem;">👆 Click any card to highlight it for your answer.</p>
+  </div>
+
+</div><!-- end tab-reference -->
+
+<!-- ═══════════════════════════════════════
+     TAB 2 — VOCABULARY
+═══════════════════════════════════════ -->
+<div class="tab-panel" id="tab-vocab">
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-purple">📚</div>
+      <h2>Adjective Bank</h2>
+    </div>
+    <p style="font-size:0.88rem; color:var(--gray-600); margin-bottom:1rem;">Click words to select them. Use them in today's speaking tasks. Try to use at least 5 different adjectives.</p>
+    <div id="usedCount" style="font-size:0.85rem; color:var(--green); font-weight:600; margin-bottom:1rem;"></div>
+
+    <div class="vocab-group">
+      <div class="vocab-topic">🏙️ Cities &amp; Places</div>
+      <div class="vocab-items">
+        <div class="vocab-item" onclick="toggleVocab(this)">crowded</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">lively</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">safe</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">expensive</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">relaxed</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">modern</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">historical</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">polluted</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">clean</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">affordable</div>
+      </div>
+    </div>
+
+    <div class="vocab-group">
+      <div class="vocab-topic">💼 Work &amp; Study</div>
+      <div class="vocab-items">
+        <div class="vocab-item" onclick="toggleVocab(this)">stressful</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">flexible</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">well-paid</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">boring</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">challenging</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">rewarding</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">competitive</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">creative</div>
+      </div>
+    </div>
+
+    <div class="vocab-group">
+      <div class="vocab-topic">📱 Technology</div>
+      <div class="vocab-items">
+        <div class="vocab-item" onclick="toggleVocab(this)">fast</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">reliable</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">easy to use</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">expensive</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">useful</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">powerful</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">popular</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">complicated</div>
+      </div>
+    </div>
+
+    <div class="vocab-group">
+      <div class="vocab-topic">🧍 People &amp; Personality</div>
+      <div class="vocab-items">
+        <div class="vocab-item" onclick="toggleVocab(this)">friendly</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">confident</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">organised</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">patient</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">ambitious</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">sociable</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">hard-working</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">independent</div>
+      </div>
+    </div>
+
+    <div class="vocab-group">
+      <div class="vocab-topic">🍽️ Food &amp; Lifestyle</div>
+      <div class="vocab-items">
+        <div class="vocab-item" onclick="toggleVocab(this)">healthy</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">delicious</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">cheap</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">convenient</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">fresh</div>
+        <div class="vocab-item" onclick="toggleVocab(this)">popular</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-amber">🔗</div>
+      <h2>Collocations Challenge</h2>
+    </div>
+    <p style="font-size:0.88rem; color:var(--gray-600); margin-bottom:1rem;">Match the intensifier with what it goes with. Some go with comparatives only, some with superlatives.</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem;">
+      <div style="background:var(--primary-light); border-radius:8px; padding:0.75rem; font-size:0.88rem;">
+        <div style="font-weight:700; color:var(--primary); margin-bottom:0.4rem;">Use before comparatives</div>
+        a bit · a little · much · far · a lot · even · slightly
+      </div>
+      <div style="background:var(--accent-light); border-radius:8px; padding:0.75rem; font-size:0.88rem;">
+        <div style="font-weight:700; color:#92400E; margin-bottom:0.4rem;">Use before superlatives</div>
+        by far · easily · one of the · the very · absolutely
+      </div>
+    </div>
+    <div style="margin-top:1rem; font-size:0.88rem; font-style:italic; color:var(--gray-600);">
+      💬 <strong>Speaking challenge:</strong> Use one intensifier from each column in your next discussion.
+    </div>
+  </div>
+
+</div><!-- end tab-vocab -->
+
+<!-- ═══════════════════════════════════════
+     TAB 3 — RANKING TASK
+═══════════════════════════════════════ -->
+<div class="tab-panel" id="tab-ranking">
+
+  <div class="task-intro">
+    ⏱️ <span><strong>Instructions:</strong> Rank each list from 1 (best/most) to the last (worst/least). Then tell your partner your ranking. <strong>You must use at least one comparative and one superlative sentence to justify each choice.</strong></span>
+  </div>
+
+  <!-- RANKING SET A -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-purple">🏙️</div>
+      <h2>Rank these cities to live in</h2>
+    </div>
+    <p style="font-size:0.88rem; color:var(--gray-600); margin-bottom:0.75rem;">Drag to reorder, or discuss verbally. Which is the best / worst city to live in? Why?</p>
+    <div class="rank-items" id="rankA" data-set="A">
+      <div class="rank-item" draggable="true"><span class="rank-num gold">1</span><span class="rank-icon drag-icon">⠿</span><span class="rank-label">Istanbul</span><span class="rank-desc">population 15M+</span></div>
+      <div class="rank-item" draggable="true"><span class="rank-num silver">2</span><span class="rank-icon drag-icon">⠿</span><span class="rank-label">Amsterdam</span><span class="rank-desc">canals &amp; bicycles</span></div>
+      <div class="rank-item" draggable="true"><span class="rank-num bronze">3</span><span class="rank-icon drag-icon">⠿</span><span class="rank-label">Tokyo</span><span class="rank-desc">ultramodern &amp; safe</span></div>
+      <div class="rank-item" draggable="true"><span class="rank-num">4</span><span class="rank-icon drag-icon">⠿</span><span class="rank-label">Buenos Aires</span><span class="rank-desc">vibrant nightlife</span></div>
+      <div class="rank-item" draggable="true"><span class="rank-num">5</span><span class="rank-icon drag-icon">⠿</span><span class="rank-label">Oslo</span><span class="rank-desc">expensive, clean</span></div>
+    </div>
+    <div class="rank-sentence-prompt">
+      🎯 Now say: <strong>"I think [city] is the best because it's more [adjective] than the others."</strong>
+      <br>Also say: <strong>"[City A] is much more [adjective] than [City B] for me."</strong>
+    </div>
+  </div>
+
+  <!-- RANKING SET B -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-amber">💼</div>
+      <h2>Rank these jobs</h2>
+    </div>
+    <p style="font-size:0.88rem; color:var(--gray-600); margin-bottom:0.75rem;">Which job is the most / least desirable? Justify your ranking to a partner.</p>
+    <div class="rank-items" id="rankB" data-set="B">
+      <div class="rank-item" draggable="true"><span class="rank-num gold">1</span><span class="rank-icon drag-icon">⠿</span><span class="rank-label">Software developer</span><span class="rank-desc">well-paid, remote</span></div>
+      <div class="rank-item" draggable="true"><span class="rank-num silver">2</span><span class="rank-icon drag-icon">⠿</span><span class="rank-label">Doctor</span><span class="rank-desc">stressful, rewarding</span></div>
+      <div class="rank-item" draggable="true"><span class="rank-num bronze">3</span><span class="rank-icon drag-icon">⠿</span><span class="rank-label">Teacher</span><span class="rank-desc">creative, flexible</span></div>
+      <div class="rank-item" draggable="true"><span class="rank-num">4</span><span class="rank-icon drag-icon">⠿</span><span class="rank-label">Social media manager</span><span class="rank-desc">modern, competitive</span></div>
+      <div class="rank-item" draggable="true"><span class="rank-num">5</span><span class="rank-icon drag-icon">⠿</span><span class="rank-label">Firefighter</span><span class="rank-desc">dangerous, heroic</span></div>
+    </div>
+    <div class="rank-sentence-prompt">
+      🎯 Now say: <strong>"The most [adjective] job is [X] because…"</strong>
+      <br>Also say: <strong>"[Job A] is a lot more [adjective] than [Job B]."</strong>
+    </div>
+  </div>
+
+  <!-- RANKING SET C -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-green">📱</div>
+      <h2>Rank these ways to learn a language</h2>
+    </div>
+    <p style="font-size:0.88rem; color:var(--gray-600); margin-bottom:0.75rem;">What is the most effective / least effective method? Why?</p>
+    <div class="rank-items" id="rankC" data-set="C">
+      <div class="rank-item" draggable="true"><span class="rank-num gold">1</span><span class="rank-icon drag-icon">⠿</span><span class="rank-label">Private lessons</span><span class="rank-desc">expensive, focused</span></div>
+      <div class="rank-item" draggable="true"><span class="rank-num silver">2</span><span class="rank-icon drag-icon">⠿</span><span class="rank-label">Language apps (e.g. Duolingo)</span><span class="rank-desc">fun, not always deep</span></div>
+      <div class="rank-item" draggable="true"><span class="rank-num bronze">3</span><span class="rank-icon drag-icon">⠿</span><span class="rank-label">Watching films in English</span><span class="rank-desc">authentic, passive</span></div>
+      <div class="rank-item" draggable="true"><span class="rank-num">4</span><span class="rank-icon drag-icon">⠿</span><span class="rank-label">Living abroad</span><span class="rank-desc">immersive, challenging</span></div>
+      <div class="rank-item" draggable="true"><span class="rank-num">5</span><span class="rank-icon drag-icon">⠿</span><span class="rank-label">Reading books</span><span class="rank-desc">slow but effective</span></div>
+    </div>
+    <div class="rank-sentence-prompt">
+      🎯 <strong>Discussion question:</strong> "Do you think living abroad is more effective than watching films? Why or why not?"
+    </div>
+  </div>
+
+</div><!-- end tab-ranking -->
+
+<!-- ═══════════════════════════════════════
+     TAB 4 — DISCUSSION PROMPTS
+═══════════════════════════════════════ -->
+<div class="tab-panel" id="tab-discussion">
+
+  <div class="task-intro">
+    💬 <span><strong>Instructions:</strong> Work with a partner. Discuss each question for at least 1–2 minutes. Try to use comparatives and superlatives in every answer. Tick the card when done.</span>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-purple">🏙️</div>
+      <h2>Topic: Your City &amp; Lifestyle</h2>
+    </div>
+    <div class="prompt-stack">
+
+      <div class="prompt-card" id="p1">
+        <p><span class="prompt-num">1</span>Which is more stressful — living in a big city or a small town? Why?</p>
+        <p class="hint">Think about: transport, noise, cost of living, social life</p>
+        <button class="done-btn" onclick="markDone('p1', this)">✓ Done</button>
+      </div>
+
+      <div class="prompt-card" id="p2">
+        <p><span class="prompt-num">2</span>What is the best thing and the worst thing about the city you live in?</p>
+        <p class="hint">Use: "By far the best thing is…" / "The worst thing is definitely…"</p>
+        <button class="done-btn" onclick="markDone('p2', this)">✓ Done</button>
+      </div>
+
+      <div class="prompt-card" id="p3">
+        <p><span class="prompt-num">3</span>Which is more important for a happy life — a well-paid job or more free time?</p>
+        <p class="hint">Use: "I think … is much more important than … because…"</p>
+        <button class="done-btn" onclick="markDone('p3', this)">✓ Done</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-amber">💻</div>
+      <h2>Topic: Technology &amp; Daily Life</h2>
+    </div>
+    <div class="prompt-stack">
+
+      <div class="prompt-card" id="p4">
+        <p><span class="prompt-num">4</span>Which is more useful in daily life — a smartphone or a car?</p>
+        <p class="hint">Use: "Without doubt, … is far more useful because…"</p>
+        <button class="done-btn" onclick="markDone('p4', this)">✓ Done</button>
+      </div>
+
+      <div class="prompt-card" id="p5">
+        <p><span class="prompt-num">5</span>Do you think online shopping is better or worse than shopping in a store? Why?</p>
+        <p class="hint">Consider: convenience, price, experience, returns</p>
+        <button class="done-btn" onclick="markDone('p5', this)">✓ Done</button>
+      </div>
+
+      <div class="prompt-card" id="p6">
+        <p><span class="prompt-num">6</span>What is the most important invention of the last 50 years?</p>
+        <p class="hint">Use: "I believe … is one of the most important inventions because…"</p>
+        <button class="done-btn" onclick="markDone('p6', this)">✓ Done</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-green">🧍</div>
+      <h2>Topic: Work, Education &amp; Future</h2>
+    </div>
+    <div class="prompt-stack">
+
+      <div class="prompt-card" id="p7">
+        <p><span class="prompt-num">7</span>Is studying at university better than learning a skill directly at work? Why?</p>
+        <p class="hint">Use: "University is more… but working is better for…"</p>
+        <button class="done-btn" onclick="markDone('p7', this)">✓ Done</button>
+      </div>
+
+      <div class="prompt-card" id="p8">
+        <p><span class="prompt-num">8</span>Who was the most inspiring person in your life? What made them special?</p>
+        <p class="hint">Use superlatives: "The most… / The best… / Without doubt…"</p>
+        <button class="done-btn" onclick="markDone('p8', this)">✓ Done</button>
+      </div>
+
+      <div class="prompt-card" id="p9">
+        <p><span class="prompt-num">9</span>Which is more difficult — speaking in public or writing a formal email in English?</p>
+        <p class="hint">Be honest! Use: "I find … much harder because…"</p>
+        <button class="done-btn" onclick="markDone('p9', this)">✓ Done</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="discussionProgress" style="text-align:center; margin-top:0.75rem; font-size:0.9rem; color:var(--gray-400);">0 of 9 discussions completed</div>
+
+</div><!-- end tab-discussion -->
+
+<!-- ═══════════════════════════════════════
+     TAB 5 — ROLE PLAY
+═══════════════════════════════════════ -->
+<div class="tab-panel" id="tab-roleplay">
+
+  <div class="task-intro">
+    🎭 <span><strong>Instructions:</strong> Choose a scenario. One person plays Person A, the other plays Person B. Read your role card — <em>do not show it to your partner!</em> Speak for 3–4 minutes. Use comparatives and superlatives naturally.</span>
+  </div>
+
+  <div class="roleplay-scenarios">
+
+    <!-- SCENARIO 1 -->
+    <div class="scenario-card">
+      <div class="scenario-header" onclick="toggleScenario(this)">
+        <div>
+          <h4>🏖️ Scenario 1 — Holiday Dilemma</h4>
+          <span style="font-size:0.82rem; color:var(--gray-400);">Choosing between two very different holidays</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <span class="scenario-tag tag-purple">A2</span>
+          <span class="chevron">▼</span>
+        </div>
+      </div>
+      <div class="scenario-body">
+        <p style="font-size:0.9rem; margin-bottom:0.85rem;"><strong>Situation:</strong> You and a friend are planning a holiday together. You have different ideas about what the perfect holiday looks like. Try to agree on one option.</p>
+        <div class="roles">
+          <div class="role-box role-a">
+            <div class="role-title" style="color:var(--purple);">👤 Person A — Beach Lover</div>
+            <ul>
+              <li>You want a beach holiday in Spain.</li>
+              <li>You think it's much more relaxing than a city trip.</li>
+              <li>It's cheaper and the weather is better.</li>
+              <li>Ask your partner why they prefer the city.</li>
+            </ul>
+          </div>
+          <div class="role-box role-b">
+            <div class="role-title" style="color:#92400E;">👤 Person B — City Explorer</div>
+            <ul>
+              <li>You want a city trip to Prague or Paris.</li>
+              <li>You think it's more interesting and educational.</li>
+              <li>There's more to do — museums, food, culture.</li>
+              <li>Try to persuade Person A it's the better choice.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="useful-lang">
+          <div class="ul-title">🗣️ Useful language</div>
+          <div class="phrases">
+            <span class="phrase">"A beach holiday is far more relaxing because…"</span>
+            <span class="phrase">"But city trips are much more educational!"</span>
+            <span class="phrase">"Spain is a lot cheaper than Paris."</span>
+            <span class="phrase">"The best thing about … is…"</span>
+            <span class="phrase">"I think … is less stressful."</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENARIO 2 -->
+    <div class="scenario-card">
+      <div class="scenario-header" onclick="toggleScenario(this)">
+        <div>
+          <h4>💼 Scenario 2 — Job Decision</h4>
+          <span style="font-size:0.82rem; color:var(--gray-400);">Advising a friend on two job offers</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <span class="scenario-tag tag-amber">A2+</span>
+          <span class="chevron">▼</span>
+        </div>
+      </div>
+      <div class="scenario-body">
+        <p style="font-size:0.9rem; margin-bottom:0.85rem;"><strong>Situation:</strong> Person B has two job offers and can't decide. Person A is their trusted friend and advisor. Help them compare the offers and decide.</p>
+        <div class="roles">
+          <div class="role-box role-a">
+            <div class="role-title" style="color:var(--purple);">👤 Person A — The Friend / Advisor</div>
+            <ul>
+              <li>Ask about salary, hours, and location.</li>
+              <li>Give your opinion using comparatives.</li>
+              <li>Think about: which is more secure? Which is better for the future?</li>
+              <li>Help your friend make the best decision.</li>
+            </ul>
+          </div>
+          <div class="role-box role-b">
+            <div class="role-title" style="color:#92400E;">👤 Person B — Two Job Offers</div>
+            <ul>
+              <li><strong>Job 1:</strong> Marketing manager, high salary, very stressful, long hours, no remote work.</li>
+              <li><strong>Job 2:</strong> Content creator, lower salary, flexible hours, fully remote, creative work.</li>
+              <li>Share the details and your feelings. Ask for advice.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="useful-lang">
+          <div class="ul-title">🗣️ Useful language</div>
+          <div class="phrases">
+            <span class="phrase">"Job 1 is better paid, but much more stressful."</span>
+            <span class="phrase">"Job 2 is more flexible and less tiring."</span>
+            <span class="phrase">"In the long run, which is more secure?"</span>
+            <span class="phrase">"The most important thing for me is…"</span>
+            <span class="phrase">"I think … is a far better option because…"</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCENARIO 3 -->
+    <div class="scenario-card">
+      <div class="scenario-header" onclick="toggleScenario(this)">
+        <div>
+          <h4>🏠 Scenario 3 — Flat Hunting</h4>
+          <span style="font-size:0.82rem; color:var(--gray-400);">Choosing between two apartments</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <span class="scenario-tag tag-green">A2+</span>
+          <span class="chevron">▼</span>
+        </div>
+      </div>
+      <div class="scenario-body">
+        <p style="font-size:0.9rem; margin-bottom:0.85rem;"><strong>Situation:</strong> You are roommates looking for a new flat. You both have different priorities. Try to agree on the best option.</p>
+        <div class="roles">
+          <div class="role-box role-a">
+            <div class="role-title" style="color:var(--purple);">👤 Person A — Priorities</div>
+            <ul>
+              <li>Flat A: city centre, smaller, more expensive (€900/month), 5 min from work.</li>
+              <li>You want Flat A — it's more convenient and safer.</li>
+              <li>You think location is more important than size.</li>
+            </ul>
+          </div>
+          <div class="role-box role-b">
+            <div class="role-title" style="color:#92400E;">👤 Person B — Priorities</div>
+            <ul>
+              <li>Flat B: suburbs, bigger, cheaper (€600/month), 40 min from work by bus.</li>
+              <li>You want Flat B — it's much bigger and quieter.</li>
+              <li>You think price and space are more important than location.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="useful-lang">
+          <div class="ul-title">🗣️ Useful language</div>
+          <div class="phrases">
+            <span class="phrase">"Flat A is more convenient but less affordable."</span>
+            <span class="phrase">"Flat B is by far the better deal financially."</span>
+            <span class="phrase">"Which is more important — price or location?"</span>
+            <span class="phrase">"I'd say … is the smarter choice because…"</span>
+            <span class="phrase">"The biggest advantage of … is…"</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div><!-- end tab-roleplay -->
+
+<!-- ═══════════════════════════════════════
+     TAB 6 — EXERCISES
+═══════════════════════════════════════ -->
+<div class="tab-panel" id="tab-exercises">
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-purple">✏️</div>
+      <h2>Exercise 1 — Choose the correct form</h2>
+    </div>
+    <p style="font-size:0.88rem; color:var(--gray-600); margin-bottom:1rem;">Click the best option for each sentence.</p>
+
+    <div class="exercise-block">
+      <div class="mcq-item" id="m1">
+        <div class="mcq-q">1. Tokyo is _______ city in the world by population in its metro area.</div>
+        <div class="mcq-options">
+          <button class="mcq-btn" onclick="checkMCQ(this, false, 'm1')">more large</button>
+          <button class="mcq-btn" onclick="checkMCQ(this, false, 'm1')">larger</button>
+          <button class="mcq-btn" onclick="checkMCQ(this, true, 'm1')">the largest</button>
+          <button class="mcq-btn" onclick="checkMCQ(this, false, 'm1')">the most large</button>
+        </div>
+      </div>
+      <div class="mcq-item" id="m2">
+        <div class="mcq-q">2. This exam is _______ the one we did last month.</div>
+        <div class="mcq-options">
+          <button class="mcq-btn" onclick="checkMCQ(this, false, 'm2')">the most difficult than</button>
+          <button class="mcq-btn" onclick="checkMCQ(this, true, 'm2')">more difficult than</button>
+          <button class="mcq-btn" onclick="checkMCQ(this, false, 'm2')">difficulter than</button>
+          <button class="mcq-btn" onclick="checkMCQ(this, false, 'm2')">most difficult than</button>
+        </div>
+      </div>
+      <div class="mcq-item" id="m3">
+        <div class="mcq-q">3. My new phone is _______ my old one — the battery lasts twice as long!</div>
+        <div class="mcq-options">
+          <button class="mcq-btn" onclick="checkMCQ(this, false, 'm3')">gooder than</button>
+          <button class="mcq-btn" onclick="checkMCQ(this, false, 'm3')">the best than</button>
+          <button class="mcq-btn" onclick="checkMCQ(this, true, 'm3')">much better than</button>
+          <button class="mcq-btn" onclick="checkMCQ(this, false, 'm3')">more good than</button>
+        </div>
+      </div>
+      <div class="mcq-item" id="m4">
+        <div class="mcq-q">4. The hotel is expensive, but it's _______ option in this area.</div>
+        <div class="mcq-options">
+          <button class="mcq-btn" onclick="checkMCQ(this, false, 'm4')">the more affordable</button>
+          <button class="mcq-btn" onclick="checkMCQ(this, true, 'm4')">the least expensive</button>
+          <button class="mcq-btn" onclick="checkMCQ(this, false, 'm4')">less expensive</button>
+          <button class="mcq-btn" onclick="checkMCQ(this, false, 'm4')">the most cheapest</button>
+        </div>
+      </div>
+      <div class="mcq-item" id="m5">
+        <div class="mcq-q">5. Working from home is _______ going to the office for me.</div>
+        <div class="mcq-options">
+          <button class="mcq-btn" onclick="checkMCQ(this, false, 'm5')">not as comfortable as</button>
+          <button class="mcq-btn" onclick="checkMCQ(this, false, 'm5')">more comfortable</button>
+          <button class="mcq-btn" onclick="checkMCQ(this, true, 'm5')">more comfortable than</button>
+          <button class="mcq-btn" onclick="checkMCQ(this, false, 'm5')">the most comfortable than</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-amber">✍️</div>
+      <h2>Exercise 2 — Complete the gaps</h2>
+    </div>
+    <p style="font-size:0.88rem; color:var(--gray-600); margin-bottom:1rem;">Type the correct form of the adjective in brackets.</p>
+
+    <div class="gapfill" id="gapfillSection">
+      <span class="q">1. Istanbul is <input type="text" data-answer="more crowded" placeholder="crowded (comp.)"> than Amsterdam.</span>
+      <span class="q">2. In my opinion, French food is <input type="text" data-answer="the most delicious" placeholder="delicious (super.)"> in Europe.</span>
+      <span class="q">3. My sister is <input type="text" data-answer="more organised" placeholder="organised (comp.)"> than me — she never forgets anything.</span>
+      <span class="q">4. Yesterday was <input type="text" data-answer="the worst" placeholder="bad (super.)"> day of my life!</span>
+      <span class="q">5. This flat is <input type="text" data-answer="cheaper" placeholder="cheap (comp.)"> than I expected — great deal!</span>
+      <span class="q">6. Learning grammar rules is not as <input type="text" data-answer="important" placeholder="important"> as practising speaking.</span>
+    </div>
+
+    <button class="reveal-btn" onclick="checkGapfill()">✓ Check Answers</button>
+    <button class="shuffle-btn" onclick="resetGapfill()" style="margin-left:0.5rem; background:var(--gray-400);">↺ Reset</button>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon icon-green">🔄</div>
+      <h2>Exercise 3 — Transform the sentences</h2>
+    </div>
+    <p style="font-size:0.88rem; color:var(--gray-600); margin-bottom:1rem;">Rewrite each sentence using the word in brackets. Keep the same meaning. Then click 'See answer' to check.</p>
+
+    <div class="exercise-block">
+
+      <div class="transform-item" id="t1">
+        <div class="prompt-q">1. No city in Turkey is bigger than Istanbul. <strong>(largest)</strong></div>
+        <textarea placeholder="Write your sentence here…" oninput="showRevealBtn('t1')"></textarea>
+        <button class="reveal-btn" onclick="revealAnswer('t1')" style="margin-top:0.35rem; display:none;">See answer</button>
+        <div class="model-answer" id="ans-t1">✅ <strong>Istanbul is the largest city in Turkey.</strong></div>
+      </div>
+
+      <div class="transform-item" id="t2">
+        <div class="prompt-q">2. A smartphone is more useful than a laptop for most people. <strong>(as useful as)</strong></div>
+        <textarea placeholder="Write your sentence here…" oninput="showRevealBtn('t2')"></textarea>
+        <button class="reveal-btn" onclick="revealAnswer('t2')" style="margin-top:0.35rem; display:none;">See answer</button>
+        <div class="model-answer" id="ans-t2">✅ <strong>A laptop is not as useful as a smartphone for most people.</strong></div>
+      </div>
+
+      <div class="transform-item" id="t3">
+        <div class="prompt-q">3. I've never had a worse meal than this one! <strong>(worst)</strong></div>
+        <textarea placeholder="Write your sentence here…" oninput="showRevealBtn('t3')"></textarea>
+        <button class="reveal-btn" onclick="revealAnswer('t3')" style="margin-top:0.35rem; display:none;">See answer</button>
+        <div class="model-answer" id="ans-t3">✅ <strong>This is the worst meal I've ever had!</strong></div>
+      </div>
+
+      <div class="transform-item" id="t4">
+        <div class="prompt-q">4. City life is much more expensive than life in a small town. <strong>(cheaper)</strong></div>
+        <textarea placeholder="Write your sentence here…" oninput="showRevealBtn('t4')"></textarea>
+        <button class="reveal-btn" onclick="revealAnswer('t4')" style="margin-top:0.35rem; display:none;">See answer</button>
+        <div class="model-answer" id="ans-t4">✅ <strong>Life in a small town is much cheaper than city life.</strong></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="exerciseScore" style="display:none;" class="score-display">
+    <div class="score-num" id="scoreNum">0/5</div>
+    <div class="score-label">Multiple choice score</div>
+    <p style="font-size:0.85rem; color:var(--gray-600); margin-top:0.5rem;">Now try the speaking tasks to practise what you've learned!</p>
+  </div>
+
+</div><!-- end tab-exercises -->
+
+</main>
+
+<script>
+// ── TAB NAVIGATION ──
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// ── VOCAB TOGGLE ──
+let vocabSelected = 0;
+function toggleVocab(el) {
+  el.classList.toggle('selected');
+  const count = document.querySelectorAll('.vocab-item.selected').length;
+  const cnt = document.getElementById('usedCount');
+  if (count > 0) {
+    cnt.textContent = `✅ ${count} word${count > 1 ? 's' : ''} selected — try using them in speaking tasks!`;
+    if (count >= 5) {
+      el.classList.remove('selected');
+      el.classList.add('used');
+    }
+  } else {
+    cnt.textContent = '';
+  }
+}
+
+// ── DISCUSSION DONE ──
+let doneCount = 0;
+function markDone(id, btn) {
+  const card = document.getElementById(id);
+  const wasDone = card.classList.contains('done');
+  card.classList.toggle('done');
+  btn.textContent = wasDone ? '✓ Done' : '✅ Done!';
+  doneCount += wasDone ? -1 : 1;
+  document.getElementById('discussionProgress').textContent =
+    `${doneCount} of 9 discussions completed${doneCount === 9 ? ' 🎉 Amazing!' : ''}`;
+}
+
+// ── SCENARIO ACCORDION ──
+function toggleScenario(header) {
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.chevron');
+  const isOpen = body.classList.contains('open');
+  // close all
+  document.querySelectorAll('.scenario-body').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.chevron').forEach(c => c.classList.remove('open'));
+  if (!isOpen) {
+    body.classList.add('open');
+    chevron.classList.add('open');
+  }
+}
+
+// ── DRAG & DROP RANKING ──
+function initDrag(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  let dragSrc = null;
+  container.querySelectorAll('.rank-item').forEach(item => {
+    item.addEventListener('dragstart', e => {
+      dragSrc = item;
+      item.style.opacity = '0.4';
+    });
+    item.addEventListener('dragend', e => {
+      item.style.opacity = '1';
+      updateRankNumbers(container);
+    });
+    item.addEventListener('dragover', e => { e.preventDefault(); item.style.background = '#EEF2FF'; });
+    item.addEventListener('dragleave', e => { item.style.background = ''; });
+    item.addEventListener('drop', e => {
+      e.preventDefault();
+      item.style.background = '';
+      if (dragSrc !== item) {
+        const allItems = [...container.querySelectorAll('.rank-item')];
+        const srcIdx = allItems.indexOf(dragSrc);
+        const tgtIdx = allItems.indexOf(item);
+        if (srcIdx < tgtIdx) container.insertBefore(dragSrc, item.nextSibling);
+        else container.insertBefore(dragSrc, item);
+      }
+      updateRankNumbers(container);
+    });
+  });
+}
+
+function updateRankNumbers(container) {
+  const medals = ['gold', 'silver', 'bronze'];
+  container.querySelectorAll('.rank-item').forEach((item, i) => {
+    const numEl = item.querySelector('.rank-num');
+    numEl.textContent = i + 1;
+    numEl.className = 'rank-num' + (i < 3 ? ' ' + medals[i] : '');
+  });
+}
+
+['rankA','rankB','rankC'].forEach(initDrag);
+
+// ── MCQ ──
+let mcqScore = 0; let mcqTotal = 0;
+function checkMCQ(btn, isCorrect, groupId) {
+  const group = document.getElementById(groupId);
+  if (group.dataset.answered) return;
+  group.dataset.answered = '1';
+  group.querySelectorAll('.mcq-btn').forEach(b => b.disabled = true);
+  if (isCorrect) {
+    btn.classList.add('correct');
+    mcqScore++;
+  } else {
+    btn.classList.add('wrong');
+    // find and highlight correct
+    group.querySelectorAll('.mcq-btn').forEach(b => {
+      if (b.getAttribute('onclick').includes('true')) b.classList.add('correct');
+    });
+  }
+  mcqTotal++;
+  if (mcqTotal === 5) {
+    const sd = document.getElementById('exerciseScore');
+    sd.style.display = 'block';
+    document.getElementById('scoreNum').textContent = mcqScore + '/5';
+    sd.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+}
+
+// ── GAP FILL ──
+function normalise(s) {
+  return s.trim().toLowerCase().replace(/\s+/g, ' ');
+}
+function checkGapfill() {
+  document.querySelectorAll('#gapfillSection input').forEach(inp => {
+    const userAns = normalise(inp.value);
+    const correct = normalise(inp.dataset.answer);
+    // allow partial: user wrote the key word(s)
+    const keyWords = correct.split(' ');
+    const allPresent = keyWords.every(w => userAns.includes(w));
+    inp.classList.remove('correct','wrong');
+    if (userAns === '' ) return;
+    inp.classList.add(allPresent ? 'correct' : 'wrong');
+    if (!allPresent) inp.title = 'Answer: ' + inp.dataset.answer;
+  });
+}
+function resetGapfill() {
+  document.querySelectorAll('#gapfillSection input').forEach(inp => {
+    inp.value = ''; inp.classList.remove('correct','wrong'); inp.title = '';
+  });
+}
+
+// ── TRANSFORM ──
+function showRevealBtn(id) {
+  const btn = document.querySelector(`#${id} .reveal-btn`);
+  const ta = document.querySelector(`#${id} textarea`);
+  if (ta.value.trim().length > 5) btn.style.display = 'inline-block';
+}
+function revealAnswer(id) {
+  document.getElementById('ans-' + id).classList.add('show');
+}
+</script>
+
+</body>
+</html>
